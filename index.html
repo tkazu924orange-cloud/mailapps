@@ -335,7 +335,7 @@
             document.getElementById('detailSubject').innerText = mail.subject;
             document.getElementById('detailSender').innerText = mail.sender;
             document.getElementById('detailDate').innerText = mail.date;
-            document.getElementById('detailContent').innerText = mail.content;
+            document.getElementById('detailContent').innerHTML = mail.content;
 
             document.getElementById('detailView').classList.add('active');
         }
