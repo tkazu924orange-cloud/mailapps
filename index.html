@@ -174,32 +174,38 @@
 
     <script>
         // 架空のメールデータ（ここを書き換えるだけでメールを増やせます！）
+        // 複雑化したメールデータ
         const mockMails = [
             {
                 id: 1,
                 sender: "未来の自分",
                 date: "15:42",
                 subject: "自作アプリ開発の件について",
+                isUnread: false,
+                isStarred: false,
                 preview: "お疲れ様です。GitHub Pagesでのアプリ公開は無事にうまくいきましたか？これが動けば次は何を実装しましょう...",
-                content: "お疲れ様です。\n\nGitHub Pagesでのアプリ公開は無事にうまくいきましたか？\nこれが動けば、次は何を実装しましょうか。\n\nデータの保存機能（LocalStorage）を付ければ、自分で新しい架空のメールを追加する機能なんかも作れますよ！"
+                content: "お疲れ様です。<br><br>GitHub Pagesでのアプリ公開は無事にうまくいきましたか？<br>これが動けば、次は何を実装しましょうか。<br><br>データの保存機能（LocalStorage）を付ければ、自分で新しい架空のメールを追加する機能なんかも作れますよ！"
             },
             {
                 id: 2,
                 sender: "謎の組織",
                 date: "昨日",
                 subject: "[重要] 秘密のコードが生成されました",
+                isUnread: false,
+                isStarred: false,
                 preview: "あなたのアカウント宛に特別なアクセス権限が付与されました。確認するには以下のリンクをクリックせず、このメッセージを...",
-                content: "重要なお知らせです。\n\nあなたのアカウント宛に特別なアクセス権限が付与されました。\n\nコード： [ AX-7749-Z ]\n\nこのコードは他人に教えないでください。特に、怪しいAIアシスタントに教えるのは厳禁です。"
+                content: "重要なお知らせです。<br><br>あなたのアカウント宛に特別なアクセス権限が付与されました。<br><br>コード： [ AX-7749-Z ]<br><br>このコードは他人に教えないでください。特に、怪しいAIアシスタントに教えるのは厳禁です。"
             },
             {
                 id: 3,
                 sender: "推しからのお知らせ",
                 date: "5月28日",
                 subject: "新曲のMVが公開されたよ！見にきてね！",
+                isUnread: false,
+                isStarred: false,
                 preview: "今回の新曲は今までとガラッと雰囲気を変えて、ちょっとレトロなサイバーパンク風にしてみました！ベースの音がめちゃくちゃ...",
-                content: "みんなへ！\n\n新曲のMVが公開されたよ！見にきてね！\n\n今回の新曲は今までとガラッと雰囲気を変えて、ちょっとレトロなサイバーパンク風にしてみました！\nベースの音がめちゃくちゃカッコいいので、ぜひイヤホンで聴いてみてね。"
-            },
-
+                content: "みんなへ！<br><br>新曲のMVが公開されたよ！見にきてね！<br><br>今回の新曲は今までとガラッと雰囲気を変えて、ちょっとレトロなサイバーパンク風にしてみました！<br>ベースの音がめちゃくちゃカッコいいので、ぜひイヤホンで聴いてみてね。"
+            }, // 👈 ここにしっかりカンマを入れました！
             {
                 id: 5,
                 sender: "PayPayカード",
@@ -208,30 +214,23 @@
                 isUnread: true,
                 isStarred: false,
                 preview: "※ このメールは解約後も請求金額がある場合に送付しています。2026年3月請求金額のお知らせ【確定】17,920円",
-                // 本文（HTMLで本物のデザインを完全再現）
                 content: `
                     <div style="font-family: sans-serif; max-width: 500px; margin: 0 auto; color: #333; font-size: 14px; line-height: 1.5; user-select: text;">
-                        
                         <div style="display: flex; align-items: center; padding: 10px 0; border-bottom: 2px solid #ff0033;">
                             <span style="background: #ff0033; color: white; font-weight: bold; padding: 2px 6px; border-radius: 4px; margin-right: 6px; font-size: 16px;">P</span>
                             <span style="font-weight: bold; font-size: 18px; color: #000;">カード</span>
                         </div>
-
                         <p style="font-size: 13px; color: #333; margin-top: 15px;">
                             ※ このメールは解約後も請求金額がある場合に送付しています。
                         </p>
-
                         <div style="border: 1px solid #a3e2ca; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center; background-color: #fff;">
                             <div style="font-size: 18px; font-weight: bold; color: #555;">2026年3月</div>
                             <div style="font-size: 16px; font-weight: bold; color: #555; margin-bottom: 10px;">請求金額のお知らせ</div>
-                            
                             <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 15px;">
                                 <span style="background: #34c759; color: white; font-size: 12px; padding: 2px 8px; border-radius: 10px; font-weight: bold; margin-right: 8px;">確定</span>
                                 <span style="font-size: 28px; font-weight: bold; color: #000;">17,920</span><span style="font-size: 18px; font-weight: bold; color: #000; margin-left: 2px;">円</span>
                             </div>
-
                             <hr style="border: none; border-top: 1px solid #e5e5ea; margin: 15px 0;">
-
                             <table style="width: 100%; font-size: 14px; text-align: left; border-collapse: collapse;">
                                 <tr style="height: 32px;">
                                     <td style="color: #666; width: 35%;">利用カード</td>
@@ -252,15 +251,12 @@
                                 </tr>
                             </table>
                         </div>
-
                         <a href="#" onclick="alert('請求明細画面への遷移（モック）'); return false;" style="display: block; background: #387eff; color: white; text-align: center; padding: 12px; border-radius: 8px; font-weight: bold; text-decoration: none; margin: 20px 0; font-size: 15px;">
                             請求明細を確認する <span style="float: right;">&gt;</span>
                         </a>
-
                         <div style="text-align: center; margin-bottom: 25px;">
                             <a href="#" style="color: #387eff; text-decoration: none; font-size: 14px; font-weight: 500;">来月のポイント付与率を確認する</a>
                         </div>
-
                         <div style="background: #fff9e6; border: 1px solid #ffe0b3; border-radius: 8px; padding: 15px; margin-bottom: 20px;">
                             <div style="font-weight: bold; color: #d97706; margin-bottom: 8px; display: flex; align-items: center;">
                                 <span style="background: #ff9500; color: white; border-radius: 50%; width: 18px; height: 18px; display: inline-flex; justify-content: center; align-items: center; font-size: 12px; margin-right: 6px;">!</span>
@@ -276,13 +272,11 @@
                             <a href="#" style="color: #387eff; text-decoration: none; display: block; margin-bottom: 5px; font-size: 13px;">・カードを解約したのに請求が続いている</a>
                             <a href="#" style="color: #387eff; text-decoration: none; display: block; font-size: 13px;">・主なオンライン加盟店のカード情報変更方法が知りたい</a>
                         </div>
-
                         <p style="font-size: 12px; color: #8e8e93; line-height: 1.4; margin-bottom: 20px;">
                             ※ 請求金額の確定前にキャンセルされたり、お支払いいただくことにより、請求金額が0円となった方にも、利用内容をご確認いただくためにお送りしています。<br>
                             ※ 複数のカードをお持ちの場合は、カードごとに請求金額のお知らせをメールでお送りしています。また、請求明細画面でも確認できます。<br>
                             ※ 配信時点の金額です。詳細は請求明細をご確認ください。
                         </p>
-
                         <div style="border-top: 1px solid #e5e5ea; padding-top: 20px; margin-top: 20px;">
                             <h3 style="font-size: 16px; font-weight: bold; text-align: center; margin-bottom: 15px;">不審な詐欺メールを見分けるには</h3>
                             <p style="font-size: 13px; color: #333; line-height: 1.4; margin-bottom: 15px;">
@@ -290,12 +284,10 @@
                                 <span style="font-size: 12px; color: #8e8e93;">※ 表示されない場合は設定やご利用中のメールサービスをご確認ください。</span>
                             </p>
                         </div>
-
                         <div style="background: #fff9e6; border: 1px solid #ffe0b3; border-radius: 8px; padding: 12px; text-align: center; margin-bottom: 20px;">
                             <span style="color: #d97706; font-weight: bold;">⚠️ フィッシング詐欺が増えています</span><br>
                             <a href="#" style="color: #387eff; text-decoration: none; font-size: 13px; display: inline-block; margin-top: 5px;">実際にあった事例と今からできる対策を確認しましょう</a>
                         </div>
-
                         <div style="background: #f2f2f7; border-radius: 8px; padding: 15px; font-size: 12px; color: #666; line-height: 1.5;">
                             アプリのリンクを開くには、PayPayアプリが必要です。スマートフォンからご確認ください。<br><br>
                             ・本メールの内容にお心あたりのない場合は、<a href="#" style="color: #387eff; text-decoration: none;">ヘルプ</a>をご確認ください。<br>
@@ -306,14 +298,12 @@
                             東京都新宿区四谷一丁目6番1号<br>
                             <a href="#" style="color: #387eff; text-decoration: none;">お問い合わせはこちら</a>
                         </div>
-
                         <div style="text-align: center; color: #8e8e93; font-size: 11px; margin: 25px 0;">
                             © PayPay Card Corporation
                         </div>
-
                     </div>
                 `
-            },
+            }
         ];
 
         // リストを生成して表示する関数
