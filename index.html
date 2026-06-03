@@ -102,171 +102,30 @@
     <script>
         const mockMails = [
             {
-                id: 5,
-                sender: "PayPayカード",
-                date: "2026/05/29",
-                subject: "お問い合わせいただいたご利用明細について",
+                id: 11,
+                sender: "ローソンチケット",
+                date: "10:15",
+                subject: "【ローソンチケット】抽選結果のお知らせ",
                 isUnread: true,
-                isStarred: false,
-                preview: "※ このメールはお問い合わせいただいたメールに送信しています",
-                content: `
-                    <div style="text-align: left; max-width: 100%; margin: 0 auto; font-size: 14px; color: #1c1c1e;">
-                        
-                        <div style="display: flex; align-items: center; padding: 8px 0 16px 0; border-bottom: 1px solid #e5e5ea;">
-                            <img src="https://image.paypay-card.co.jp/images/common/logo_paypay_card.png" alt="Pカード" style="height: 24px; display: none;">
-                            <span style="background: #ff0033; color: white; font-weight: bold; padding: 2px 6px; border-radius: 4px; margin-right: 6px; font-size: 16px; font-family: sans-serif;">P</span>
-                            <span style="font-weight: bold; font-size: 18px; color: #000; letter-spacing: -0.5px;">カード</span>
-                        </div>
-
-                        <p style="font-size: 14px; line-height: 1.6; margin: 20px 0 16px 0; color: #1c1c1e;">
-                            ※ このメールはお問い合わせいただいたメールアドレスに送信しています。。
-                        </p>
-
-                        <div style="border: 1px solid #b7e4d3; border-radius: 12px; padding: 24px 16px; margin: 16px 0; background-color: #fff; text-align: center;">
-                            <div style="font-size: 16px; font-weight: bold; color: #3a3a3c; margin-top: 2px; margin-bottom: 16px;">取引金額のお知らせ</div>
-                            
-                            <div style="display: inline-flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-                                <span style="background: #34c759; color: white; font-size: 11px; padding: 2px 6px; border-radius: 6px; font-weight: bold; margin-right: 8px; transform: translateY(-1px);">確定</span>
-                                <span style="font-size: 32px; font-weight: 700; color: #000; font-family: -apple-system-font, sans-serif;">97,008</span><span style="font-size: 16px; font-weight: bold; color: #000; margin-left: 2px;">円</span>
-                            </div>
-
-                            <div style="border-top: 1px solid #e5e5ea; margin: 8px 0;"></div>
-
-                            <table style="width: 100%; font-size: 14px; border-collapse: collapse; margin-top: 8px;">
-                                <tr style="height: 36px; border-bottom: 1px solid #f2f2f7;">
-                                    <td style="color: #8e8e93; text-align: left;">利用カード</td>
-                                    <td style="text-align: right; font-weight: 500; color: #000;">
-                                        PayPayカード（JCB）
-                                        <span style="background: #fff0e6; color: #ff9500; font-size: 11px; padding: 2px 4px; border-radius: 4px; font-weight: bold; margin-left: 4px;">解約済み</span>
-                                    </td>
-                                </tr>
-                                <tr style="height: 36px; border-bottom: 1px solid #f2f2f7;">
-                                    <td style="color: #8e8e93; text-align: left;">支払い日</td>
-                                    <td style="text-align: right; font-weight: 500; color: #000;">2026年5月21日（木）</td>
-                                </tr>
-                            </table>
-                        </div>
- 
-                        <a href="meisai.pdf" target="_blank" style="display: block; background: #387eff; color: white; text-align: center; padding: 14px; border-radius: 10px; font-weight: bold; text-decoration: none; margin: 24px 0 16px 0; font-size: 15px; box-shadow: 0 2px 4px rgba(56,126,255,0.1);">
-                            取引明細を確認する
-                            <span style="float: right; font-weight: normal; margin-right: 4px;">&gt;</span>
-                         </a>
-
-                        <div style="text-align: center; margin-bottom: 32px;">
-                            <a href="#" style="color: #387eff; text-decoration: none; font-size: 14px; font-weight: 500;">来月のポイント付与率を確認する</a>
-                        </div>
-
-                        <div style="background: #fff9e6; border: 1px solid #ffe0b3; border-radius: 10px; padding: 16px; margin-bottom: 24px; text-align: left;">
-                            <div style="font-weight: bold; color: #000; margin-bottom: 8px; display: flex; align-items: center; font-size: 14px;">
-                                <span style="background: #ff9500; color: white; border-radius: 50%; width: 18px; height: 18px; display: inline-flex; justify-content: center; align-items: center; font-size: 12px; margin-right: 8px; font-weight: bold;">!</span>
-                                解約後に請求が発生する場合があります
-                            </div>
-                            <p style="margin: 0 0 12px 0; font-size: 13px; color: #3a3a3c; line-height: 1.5;">
-                                継続的な支払いにカードを登録している場合、解約後に請求が発生する場合があります。
-                            </p>
-
-                        <div style="font-size: 12px; color: #8e8e93; line-height: 1.6; margin-bottom: 32px; text-align: left;">
-                            ※ 請求金額の確定前にキャンセルされたり、お支払いいただくことにより、請求金額が0円となった方にも、利用内容をご確認いただくためにお送りしています。<br>
-                            ※ 複数のカードをお持ちの場合は、カードごとに請求金額のお知らせをメールでお送りしています。また、請求明細画面でも確認できます。<br>
-                            ※ 配信時点の金額です。詳細は請求明細をご確認ください。
-                        </div>
-
-                        <div style="border-top: 1px solid #e5e5ea; padding-top: 24px; margin-top: 24px; text-align: left;">
-                            <h3 style="font-size: 16px; font-weight: bold; color: #000; margin: 0 0 12px 0;">不審な詐欺メールを見分けるには</h3>
-                            <p style="font-size: 13px; color: #3a3a3c; line-height: 1.5; margin-bottom: 16px;">
-                                PayPayカードからお送りしたメールには、<b>PayPayカード</b>または<b>PayPayの公式ブランドアイコン</b>が表示されます。<br>
-                                <span style="font-size: 12px; color: #8e8e93;">※ 表示されない場合は設定やご利用中のメールサービスをご確認ください。</span>
-                            </p>
-                        </div>
-
-                        <div style="background: #fff9e6; border: 1px solid #ffe0b3; border-radius: 10px; padding: 14px 16px; text-align: left; margin-bottom: 24px;">
-                            <div style="color: #000; font-weight: bold; font-size: 13px; display: flex; align-items: center;">
-                                <span style="margin-right: 6px;">⚠️</span> フィッシング詐欺が増えています
-                            </div>
-                            <a href="#" style="color: #387eff; text-decoration: none; font-size: 13px; display: inline-block; margin-top: 6px; font-weight: 500;">実際にあった事例と今からできる対策を確認しましょう</a>
-                        </div>
-
-                        <div style="background: #f2f2f7; border-radius: 10px; padding: 16px; font-size: 12px; color: #636366; line-height: 1.6; text-align: left;">
-                            アプリのリンクを開くには、PayPayアプリが必要です。スマートフォンからご確認ください。<br><br>
-                            ・本メールの内容にお心あたりのない場合は、<a href="#" style="color: #387eff; text-decoration: none;">ヘルプ</a>をご確認ください。<br>
-                            ・このメールは送信専用メールアドレスより一部のお客様にお送りしています。このメールに直接返信いただいても対応できませんのでご了承ください。<br>
-                            ・カードの利用でお困りの際は、<a href="#" style="color: #387eff; text-decoration: none;">お客様サポート</a>からお問い合わせください。<br>
-                            <div style="border-top: 1px solid #d1d1d6; margin: 12px 0;"></div>
-                            発行：<a href="#" style="color: #387eff; text-decoration: none; font-weight: 500;">PayPayカード株式会社</a><br>
-                            東京都新宿区四谷一丁目6番1号<br>
-                            <a href="#" style="color: #387eff; text-decoration: none; font-weight: 500;">お問い合わせはこちら</a>
-                        </div>
-
-                        <div style="text-align: center; color: #8e8e93; font-size: 11px; margin: 32px 0 16px 0; font-family: sans-serif;">
-                            © PayPay Card Corporation
-                        </div>
-
-                    </div>
-                `
+                isStarred: true,
+                preview: "この度は抽選お申し込みいただきありがとうございました。厳正なる抽選を行った結果、お客様は以下のチケットが当選...",
+                content: "ローソンチケットをご利用いただきありがとうございます。<br><br>厳正なる抽選を行った結果、ご応募いただきました以下の公演のチケットが<b>【当選】</b>いたしました。<br><br>■公演名：サンプルライブツアー 2026<br>■日時：2026年7月15日(水) 18:30開演<br>■会場：Zepp DiverCity(TOKYO)<br>■席種：1Fスタンディング<br><br>代金のお支払い、およびチケットの発券期限は 2026年6月7日(日) 23:00 までとなります。期限を過ぎますと当選は無効となりますのでご注意ください。"
             },
             {
-                id: 1,
-                sender: "未来の自分",
-                date: "15:42",
-                subject: "自作アプリ開発の件について",
-                isUnread: false,
+                id: 10,
+                sender: "Amazon.co.jp",
+                date: "08:22",
+                subject: "Amazon.co.jp：発送のご案内",
+                isUnread: true,
                 isStarred: false,
-                preview: "お疲れ様です。GitHub Pagesでのアプリ公開は無事にうまくいきましたか？...",
-                content: "お疲れ様です。<br><br>GitHub Pagesでのアプリ公開は無事にうまくいきましたか？<br>これが動けば、次は何を実装しましょうか。<br><br>データの保存機能（LocalStorage）を付ければ、自分で新しい架空のメールを追加する機能なんかも作れますよ！"
-            }
-        ];
-
-        function renderMailList() {
-            const listEl = document.getElementById('mailList');
-            listEl.innerHTML = '';
-            mockMails.forEach(mail => {
-                const li = document.createElement('li');
-                li.className = `mail-item ${mail.isUnread ? 'unread' : ''}`;
-                li.innerHTML = `
-                    <div class="unread-dot"></div>
-                    <div class="mail-content-area" onclick="openDetail(${mail.id})">
-                        <div class="mail-top">
-                            <span class="sender">${mail.sender}</span>
-                            <span class="date">${mail.date}</span>
-                        </div>
-                        <div class="subject">${mail.subject}</div>
-                        <div class="preview">${mail.preview}</div>
-                    </div>
-                    <button class="star-btn ${mail.isStarred ? 'active' : ''}" onclick="toggleStar(${mail.id}, event)">
-                        ${mail.isStarred ? '★' : '☆'}
-                    </button>
-                `;
-                listEl.appendChild(li);
-            });
-        }
-
-        function toggleStar(id, event) {
-            event.stopPropagation();
-            const mail = mockMails.find(m => m.id === id);
-            if (mail) {
-                mail.isStarred = !mail.isStarred;
-                renderMailList();
-            }
-        }
-
-        function openDetail(id) {
-            const mail = mockMails.find(m => m.id === id);
-            if (!mail) return;
-            mail.isUnread = false;
-            renderMailList();
-            document.getElementById('detailSubject').innerText = mail.subject;
-            document.getElementById('detailSender').innerText = mail.sender;
-            document.getElementById('detailDate').innerText = mail.date;
-            document.getElementById('detailContent').innerHTML = mail.content;
-            document.getElementById('detailView').classList.add('active');
-        }
-
-        function closeDetail() {
-            document.getElementById('detailView').classList.remove('remove');
-            document.getElementById('detailView').classList.remove('active');
-        }
-
-        renderMailList();
-    </script>
-</body>
-</html>
+                preview: "ご注文いただいた商品が発送されました。お届け予定日：本日中。お問い合わせ伝票番号：1234-5678-9012...",
+                content: "Amazon.co.jp をご利用いただきありがとうございます。<br><br>ご注文いただいた商品を本日発送いたしました。荷物の配送状況につきましては、以下のリンクまたは注文履歴よりご確認いただけます。<br><br>■お届け予定日：本日中<br>■配送業者：ヤマト運輸<br>■お問い合わせ伝票番号：1234-5678-9012<br><br>商品がお手元に届くまで今しばらくお待ちください。"
+            },
+            {
+                id: 9,
+                sender: "教務課（大学）",
+                date: "昨日",
+                subject: "【重要】前期履修登録の確認および修正期間について",
+                isUnread: false,
+                isStarred: true,
+                preview: "学生の皆さんへ。前期履修登録の確認および修正期間は明日からとなります。登録エラーが出ている学生は必ず期間
